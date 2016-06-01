@@ -19,12 +19,14 @@ export default class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // deafult state
+      rotate: 0,
     };
   }
 
   onToggleHoldTop = event => {
     debug('onToggleHoldTop %o', event);
+    const isHold = this.state.rotate === 0 ? 1 : 0;
+    this.setState({ rotate: isHold * 90 });
   }
 
   render() {
@@ -34,20 +36,36 @@ export default class Header extends React.Component {
         className="Header"
         style={style}
       >
+      {(() => {
+        if (this.state.rotate === 0) {
+          return (
+            <Icon
+              className="SelectableMenu"
+              name="thumb-tack"
+              style={iconStyle}
+              onClick={this.onToggleHoldTop}
+            />
+          );
+        } else {
+          return (
+            <Icon
+              className="SelectableMenu"
+              name="thumb-tack"
+              rotate={`${this.state.rotate}`}
+              style={iconStyle}
+              onClick={this.onToggleHoldTop}
+            />
+          );
+        }
+      })()}
         <Icon
-          name="thumb-tack"
           className="SelectableMenu"
-          style={iconStyle}
-          onClick={this.onToggleHoldTop}
-        />
-        <Icon
           name="minus"
-          className="SelectableMenu"
           style={iconStyle}
         />
         <Icon
-          name="times"
           className="SelectableMenu"
+          name="times"
           style={iconStyle}
         />
       </div>

@@ -17,7 +17,7 @@ export default class DetailMarkey extends React.Component {
         className="DetailMarkey"
         style={{
           width: '100%',
-          height: '20px',
+          height: '14px',
           marginTop: '5px',
           backgroundColor: 'rgba(255, 0, 94, 0.35)',
         }}
@@ -25,7 +25,7 @@ export default class DetailMarkey extends React.Component {
         <p
           style={{
             color: 'white',
-            fontSize: '12px',
+            fontSize: '9px',
             marginLeft: '10px',
             paddingButtom: '1px',
           }}

@@ -13,9 +13,10 @@ const style = {
 const marginLeft = '5px';
 
 const titleStyle = {
-  fontSize: '34px',
-  marginLeft,
+  width: '50%',
+  fontSize: '28px',
   color: 'rgb(255, 255, 255)',
+  marginLeft,
 };
 
 const menuStyle = {
@@ -38,16 +39,23 @@ export default class LeftBlock extends React.Component {
         className="LeftBlock"
         style={style}
       >
-        <p style={titleStyle} >LEMP</p>
+        <p style={titleStyle} >LEMP3</p>
         <p className="SelectableMenu" style={menuStyle} >options</p>
         <p className="SelectableMenu" style={menuStyle} >utilities</p>
         <p className="SelectableMenu" style={menuStyle} >equlizer</p>
         <p className="SelectableMenu" style={menuStyle} >playlist</p>
-        <Icon
+        <div
           className="Detail"
-          name="ellipsis-h"
-          size="2x"
-        />
+          style={{
+            padding: '10px 0',
+            marginTop: '-30px',
+            float: 'right',
+            display: 'inline-block',
+            cursor: 'pointer',
+          }}
+        >
+          <Icon name="ellipsis-h" />
+        </div>
       </div>
     );
   }

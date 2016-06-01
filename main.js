@@ -7,9 +7,10 @@ const BrowserWindow = electron.BrowserWindow;
 let mainWindow = null;
 
 const options = {
-  width: 420,
-  height: 120,
+  width: 330,
+  height: 100,
   frame: false,
+  resizable: false,
 };
 
 app.on('ready', function () {

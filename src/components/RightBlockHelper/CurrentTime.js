@@ -20,9 +20,9 @@ export default class CurrentTime extends React.Component {
         <p
           style={{
             color: 'white',
-            fontSize: '1.4em',
+            fontSize: '22px',
             marginLeft: '10px',
-            marginTop: '5px',
+            marginTop: '2px',
           }}
         >00:00</p>
       </div>

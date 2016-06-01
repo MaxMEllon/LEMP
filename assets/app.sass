@@ -1,12 +1,14 @@
 html, body
-  width: 420px
-  height: 120px
+  width: 330px
+  height: 100px
   overflow: hidden
   font-family: 'Lato', sans-serif
+  -webkit-app-region: drag
+  -webkit-user-select: none
 
 body > div
   height: 100%
-  overflow: scroll
+  overflow: hidden
   -webkit-overflow-scrolling: touch
 
 .SelectableMenu
@@ -15,6 +17,9 @@ body > div
 
   &:hover
     color: gray
+
+  &:active
+    color: rgb(152, 255, 252)
 
 .Detail
   margin-top: -15px
@@ -26,10 +31,85 @@ body > div
   &:hover
     color: gray
 
-.IconButton
+  &:active
+    color: rgb(152, 255, 252)
+
+.SystemButton
   color: white
   border: 2px solid white
+  cursor: pointer
+
   &:hover
     color: gray
     border: 2px solid gray
+
+  &:active
+    color: rgb(152, 255, 252)
+    border: 2px solid rgb(152, 255, 252)
+
+.IconButton
+  color: white
+  border: 2px solid white
+  cursor: pointer
+
+  &:hover
+    color: gray
+    border: 2px solid gray
+
+  &:active
+    color: rgb(152, 255, 252)
+    border: 2px solid rgb(152, 255, 252)
+
+.MuteButton
+  color: white
+  font-size: 18px
+  margin-right: 4px
+  cursor: pointer
+
+.RepeatButton
+  color: white
+  font-size: 18px
+  margin-left: 4px
+  margin-right: 5px
+  margin-top: -2px
+  cursor: pointer
+
+.RandomButton
+  color: white
+  font-size: 18px
+  margin-right: 5px
+  cursor: pointer
+
+.rangeslider
+  margin: 7px 0
+  position: relative
+  background: transparent
+  .rangeslider__fill, .rangeslider__handle
+    position: absolute
+
+  &, .rangeslider__fill
+    display: block
+
+  .rangeslider__handle
+    background: transparent
+    cursor: pointer
+    display: inline-block
+    position: absolute
+    -webkit-app-region: no-drag
+    &:active
+      background: transparent
+
+.rangeslider-horizontal
+  height: 3px
+
+  .rangeslider__fill
+    height: 100%
+    background: rgb(47, 200, 216)
+    // border-radius: 10px
+    top: 0
+
+  .rangeslider__handle
+    width: 6px
+    height: 30px
+    top: -10px
 
