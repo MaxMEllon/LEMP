@@ -1,0 +1,16 @@
+Thumbs.db
+.DS_Store
+
+bundle
+
+node_modules
+bower_components
+
+.nyc_output
+coverage
+docs
+lib
+npm-debug.log
+
+release/*.js
+release/*.map

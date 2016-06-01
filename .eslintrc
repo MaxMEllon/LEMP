@@ -1,0 +1,15 @@
+---
+extends: airbnb
+parser: babel-eslint
+
+env:
+  node: true
+  mocha: true
+  es6: true
+
+rules:
+  arrow-body-style: [1]
+  react/jsx-no-bind: [0]
+  react/prefer-stateless-function: [1]
+  react/prop-types: [0]
+  prefer-stateless-function: [0]
