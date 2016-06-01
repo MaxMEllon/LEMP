@@ -24,24 +24,41 @@ export default class SubToolBox extends React.Component {
     this.state = {
       volume: 0,
       mute: false,
+      repeat: false,
+      random: false,
     };
     this.onChangeVolume = this.onChangeVolume.bind(this);
     this.onMute = this.onMute.bind(this);
-  }
-
-  onMute() {
-    const mute = !this.state.mute;
-    debug('mute %o', mute);
-    this.setState({ mute });
+    this.onRepeat = this.onRepeat.bind(this);
+    this.onRandom = this.onRandom.bind(this);
   }
 
   onChangeVolume(volume) {
     this.setState({ volume });
   }
 
+  onMute() {
+    const mute = !this.state.mute;
+    this.setState({ mute });
+  }
+
+  onRepeat() {
+    const repeat = !this.state.repeat;
+    this.setState({ repeat });
+  }
+
+  onRandom() {
+    const random = !this.state.random;
+    this.setState({ random });
+  }
+
   render() {
     debug('render');
     const isMute = this.state.mute === true ? 'volume-off' : 'volume-up';
+    const muteColor = this.state.mute === true ? 'white' : 'rgb(152, 255, 252)';
+    const loopColor = this.state.repeat === true ? 'rgb(152, 255, 252)' : 'white';
+    const random = this.state.random === true ? 'random' : 'long-arrow-right';
+    const randomColor = this.state.random === true ? 'rgb(152, 255, 252)' : 'white';
     return (
       <div
         className="SubToolBox"
@@ -49,13 +66,28 @@ export default class SubToolBox extends React.Component {
       >
         <div style={{ display: 'inline' }} >
           <div style={ buttonContainerStyle } onClick={ this.onMute } >
-            <Icon className="MuteButton" name={ isMute } />
+            <Icon
+              style={{ color: muteColor }}
+              className="MuteButton"
+              name={ isMute }
+            />
           </div>
           <div style={ buttonContainerStyle } >
-            <Icon className="RepeatButton" name="refresh" />
+            <Icon
+              style={{ color: loopColor }}
+              className="RepeatButton"
+              name="refresh"
+              spin={ this.state.repeat }
+              onClick={ this.onRepeat }
+            />
           </div>
           <div style={ buttonContainerStyle } >
-            <Icon className="RandomButton" name="random" />
+            <Icon
+              style={{ color: randomColor }}
+              className="RandomButton"
+              name={ random }
+              onClick={ this.onRandom }
+            />
           </div>
         </div>
         <Slider

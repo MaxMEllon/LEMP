@@ -13,19 +13,31 @@ const buttonContainerStyle = {
   width: '60%',
   paddingTop: '8px',
   paddingLeft: '5px',
-  display: 'table-cell'
+  display: 'table-cell',
 };
 
 export default class ToolBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // deafult state
+      pause: false,
     };
+    this.onPlay = this.onPlay.bind(this);
+    this.onStop = this.onStop.bind(this);
+  }
+
+  onPlay() {
+    const pause = !this.state.pause;
+    this.setState({ pause });
+  }
+
+  onStop() {
+    this.setState({ pause: false });
   }
 
   render() {
     debug('render');
+    const pause = this.state.pause === true ? 'pause' : 'play';
     return (
       <div
         className="ToolBox"
@@ -35,11 +47,17 @@ export default class ToolBox extends React.Component {
           <div style={ buttonContainerStyle } >
             <IconButton iconName="fast-backward" />
           </div>
-          <div style={ buttonContainerStyle } >
+          <div
+            style={ buttonContainerStyle }
+            onClick={ this.onStop }
+          >
             <IconButton iconName="stop" />
           </div>
-          <div style={ buttonContainerStyle } >
-            <IconButton iconName="play" />
+          <div
+            style={ buttonContainerStyle }
+            onClick={ this.onPlay }
+          >
+            <IconButton iconName={ pause } />
           </div>
           <div style={ buttonContainerStyle } >
             <IconButton iconName="fast-forward" />

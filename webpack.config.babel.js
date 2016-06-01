@@ -60,6 +60,7 @@ const configs = [{
 switch (process.env.NODE_ENV) {
   case 'production':
     configs[0].plugins = [
+      new ExtractTextPlugin('bundle.css'),
       new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
     ];
 
