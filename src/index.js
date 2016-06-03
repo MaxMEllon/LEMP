@@ -1,7 +1,7 @@
 import '../assets/style';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from './container/AppContainer';
+import AppContainer from './containers/AppContainer';
 
 window.onload = () => {
   ReactDOM.render(
