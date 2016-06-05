@@ -3,13 +3,6 @@ import React from 'react';
 const debug = require('../../utils/Debug')('DetailMarkey');
 
 export default class DetailMarkey extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // deafult state
-    };
-  }
-
   render() {
     debug('render');
     return (

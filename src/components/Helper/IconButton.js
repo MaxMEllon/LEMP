@@ -9,12 +9,12 @@ const style = {
 };
 
 export default class ToolBox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // deafult state
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     // deafult state
+  //   };
+  // }
 
   render() {
     debug('render');

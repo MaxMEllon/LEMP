@@ -25,13 +25,6 @@ const menuStyle = {
 };
 
 export default class LeftBlock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // deafult state
-    };
-  }
-
   render() {
     debug('render');
     return (

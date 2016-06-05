@@ -8,13 +8,6 @@ import { Icon } from 'react-fa';
 const debug = require('../utils/Debug')('RightBlock');
 
 export default class RightBlock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // deafult state
-    };
-  }
-
   render() {
     debug('render');
     return (

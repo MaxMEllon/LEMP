@@ -13,13 +13,6 @@ const style = {
 };
 
 export default class Body extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // deafult state
-    };
-  }
-
   render() {
     debug('render');
     return (
@@ -33,3 +26,4 @@ export default class Body extends React.Component {
     );
   }
 }
+

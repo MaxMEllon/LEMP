@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Body from '../components/Body';
 
 const debug = require('../utils/Debug')('AppContainer');
@@ -8,9 +9,9 @@ const style = {
   height: '100%',
 };
 
-export default class AppContainer extends React.Component {
+class AppContainer extends React.Component {
   render() {
-    debug('render');
+    debug('render %o', this.props);
     return (
       <div
         className ="AppContainer"
@@ -21,3 +22,10 @@ export default class AppContainer extends React.Component {
     );
   }
 }
+
+export default connect(
+  state => state,
+)(AppContainer);
+// export default AppContainer;
+
+// vim:ft=javascript.jsx
